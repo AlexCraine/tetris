@@ -20,11 +20,24 @@ main {
   width: 50dvh;
   background-color: #222;
   display: flex;
+  position: relative;
 
   #glass {
     background-color: #000;
     margin: auto;
     display: block;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 45dvh;
+    height: 90dvh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: repeating-linear-gradient(#333 0 1px, transparent 1px calc(4.5dvh - 1px), #333 calc(4.5dvh - 1px) 4.5dvh), repeating-linear-gradient(90deg, #333 0 1px, transparent 1px calc(4.5dvh - 1px), #333 calc(4.5dvh - 1px) 4.5dvh);
   }
 }
 
